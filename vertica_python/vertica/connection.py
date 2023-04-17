@@ -481,7 +481,7 @@ class Connection(object):
     def create_socket(self, family):
         """Create a TCP socket object"""
         raw_socket = socket.socket(family, socket.SOCK_STREAM)
-        raw_socket.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+        raw_socket.setsockopt(socket.SOL_SOCKET, 1200, 1)
         connection_timeout = self.options.get('connection_timeout')
         if connection_timeout is not None:
             self._logger.debug('Set socket connection timeout: {0}'.format(connection_timeout))
